@@ -51,6 +51,8 @@ function Plant(someArray, name, image, size, lightLevel, petFriendly, airCleaner
         item.className = "mx-auto";
         var moreInfoBtn = document.createElement('div');
         moreInfoBtn.innerHTML = '<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Find Out More</button>';
+        var modalHeader = document.getElementById('modal-header');
+        modalHeader.innerText = this.name;
         container.appendChild(item);
         container.appendChild(name);
         container.appendChild(moreInfoBtn);
