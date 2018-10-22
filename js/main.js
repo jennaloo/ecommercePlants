@@ -1,5 +1,5 @@
 var navBar = document.createElement('div');
-navBar.className = "row";
+navBar.className = "row pb-5";
 navBar.id = "navbar";
 document.body.appendChild(navBar);
 
@@ -13,9 +13,9 @@ logo.className = "logo px-3";
 logoSpace.appendChild(logo);
 
 var title = document.createElement('div');
-title.className = "col-6 pt-2"
+title.className = "col-6 pt-3"
 title.id = "title";
-title.innerText = "The Grow Room"
+title.innerText = "Botanical Corner"
 navBar.appendChild(title);
 
 var shoppingCart = document.createElement('div');
@@ -33,13 +33,13 @@ function Plant(someArray, name, image, size, lightLevel, petFriendly, airCleaner
     this.airCleaner = airCleaner;
     someArray.push(this);
     this.populateHTML = function () {
-        var container = document.createElement('div');
         var name = document.createElement('h6');
+        var container = document.createElement('div');
         name.innerText = this.name;
         name.className = "text-center p-2"
         name.style.fontFamily = "'Josefin Slab', serif";
         name.style.fontSize = "20px";
-        container.className = "container-fluid d-inline-block col-xs-12 col-sm-6 col-md-4 col-xl-3 animated fadeIn";
+        container.className = "container-fluid d-inline-block col-xs-12 col-sm-6 col-md-4 col-xl-3 animated fadeIn text-center";
         container.id = "container";
         document.body.appendChild(container);
         var item = document.createElement('div');
@@ -49,8 +49,11 @@ function Plant(someArray, name, image, size, lightLevel, petFriendly, airCleaner
         item.style.boxShadow = "5px 5px 10px lightgrey";
         item.id = "item";
         item.className = "mx-auto";
+        var moreInfoBtn = document.createElement('div');
+        moreInfoBtn.innerHTML = '<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Find Out More</button>';
         container.appendChild(item);
         container.appendChild(name);
+        container.appendChild(moreInfoBtn);
     }
 }
 
