@@ -25,11 +25,12 @@ navBar.appendChild(shoppingCart);
 
 //Goal: Make a sort function that can choose multiple selectors like size, petFriendly, airCleaner, price)
 
-function Plant(someArray, name, image, size, price) {
+function Plant(someArray, name, image, size, price, site) {
     this.name = name;
     this.image = image;
     this.size = size;
     this.price = price;
+    this.site = site;
     someArray.push(this);
     this.populateHTML = function () {
         var container = document.createElement('div');
@@ -48,7 +49,8 @@ function Plant(someArray, name, image, size, price) {
         document.body.appendChild(container);
 
         var anchorTags = document.createElement('a');
-        anchorTags.setAttribute("href", "#");
+        anchorTags.setAttribute("href", "" + this.site + "");
+        anchorTags.setAttribute("target", "_blank");
         container.appendChild(anchorTags);
 
         var item = document.createElement('div');
@@ -70,7 +72,7 @@ var myArray = [];
 //Plant(myArray,name,image,size,price){
 
 
-var birdOfParadise = new Plant(myArray, 'Bird Of Paradise', '../img/birdOfParadise.jpg', 'X-Large', 195);
+var birdOfParadise = new Plant(myArray, 'Bird Of Paradise', '../img/birdOfParadise.jpg', 'X-Large', 195, "../birdofParadise.html");
 
 var birdsNestFern = new Plant(myArray, 'Birds Nest Fern', '../img/birdsNestFern.jpg', 'Small', 35);
 
