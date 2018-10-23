@@ -53,14 +53,14 @@ function Plant(someArray, name, image, size, price, site) {
         anchorTags.setAttribute("target", "_blank");
         container.appendChild(anchorTags);
 
+
         var item = document.createElement('div');
-        item.style.backgroundImage = "url(" + this.image + ")";
+        item.setAttribute("style", "background-image: url('" + this.image + "')");
         item.style.backgroundRepeat = "no-repeat";
         item.style.backgroundSize = "cover";
         item.style.boxShadow = "5px 5px 10px lightgrey";
         item.id = "item";
         item.className = "mx-auto";
-
         anchorTags.appendChild(item);
         container.appendChild(info);
     };
@@ -74,52 +74,50 @@ var myArray = [];
 
 var birdOfParadise = new Plant(myArray, 'Bird Of Paradise', '../img/birdOfParadise.jpg', 'X-Large', 195, "../birdofParadise.html");
 
-var birdsNestFern = new Plant(myArray, 'Birds Nest Fern', '../img/birdsNestFern.jpg', 'Small', 35);
+var birdsNestFern = new Plant(myArray, 'Birds Nest Fern', '../img/birdsNestFern.jpg', 'Small', 35, "../birdofParadise.html");
 
-var crotonPetra = new Plant(myArray, 'Croton Petra', '../img/CrotonPetra.jpg', 'Medium', 65);
+var crotonPetra = new Plant(myArray, 'Croton Petra', '../img/CrotonPetra.jpg', 'Medium', 65, "../birdofParadise.html");
 
-var cutlassAglaonema = new Plant(myArray, 'Cutlass Aglaonema', '../img/cutlassAglaonema.jpg', 'Medium', 65);
+var cutlassAglaonema = new Plant(myArray, 'Cutlass Aglaonema', '../img/cutlassAglaonema.jpg', 'Medium', 65, "../birdofParadise.html");
 
-var dracaenaJanetCraig = new Plant(myArray, 'Dracaena Janet Craig', '../img/dracaenaJanetCraig.jpg', 'X-Large', 195);
+var dracaenaJanetCraig = new Plant(myArray, 'Dracaena Janet Craig', '../img/dracaenaJanetCraig.jpg', 'X-Large', 195, "../birdofParadise.html");
 
-var dracaenaLemonLime = new Plant(myArray, 'Dracaena Lemon Lime', '../img/dracaenaLemonLime.jpg', 'Medium', 65);
+var dracaenaLemonLime = new Plant(myArray, 'Dracaena Lemon Lime', '../img/dracaenaLemonLime.jpg', 'Medium', 65, "../birdofParadise.html");
 
-var dracaenaMarginataBush = new Plant(myArray, 'Dracaena Marginata Bush', '../img/dracaenaMarginataBush.jpg', 'Large', 150);
+var dracaenaMarginataBush = new Plant(myArray, 'Dracaena Marginata Bush', '../img/dracaenaMarginataBush.jpg', 'Large', 150, "../birdofParadise.html");
 
-var ficusDanielle = new Plant(myArray, 'Ficus Danielle', '../img/ficusDanielle.jpg', 'X-Large', 195);
+var ficusDanielle = new Plant(myArray, 'Ficus Danielle', '../img/ficusDanielle.jpg', 'X-Large', 195, "../birdofParadise.html");
 
-var fiddleLeafFig = new Plant(myArray, 'Fiddle Leaf Fig', '../img/fiddleLeafFig.jpg', 'X-Large', 195);
+var fiddleLeafFig = new Plant(myArray, 'Fiddle Leaf Fig', '../img/fiddleLeafFig.jpg', 'X-Large', 195, "../birdofParadise.html");
 
 var majestyPalm = new Plant(myArray, 'Majesty Palm', '../img/floorPalm.jpg', 'X-Large', 195);
 
-var freddiePlant = new Plant(myArray, 'Freddie Plant', '../img/freddiePlant.jpg', 'Small', 35);
+var freddiePlant = new Plant(myArray, 'Freddie Plant', '../img/freddiePlant.jpg', 'Small', 35, "../birdofParadise.html");
 
-var hedgehogAloe = new Plant(myArray, 'Hedgehog Aloe', '../img/hedgehogAloe.jpg', 'Small', 35);
-
-
-var kimberlyQueenFern = new Plant(myArray, 'Kimberly Queen Fern', '../img/kimberlyQueenFern.jpg', 'Medium', 65);
+var hedgehogAloe = new Plant(myArray, 'Hedgehog Aloe', '../img/hedgehogAloe.jpg', 'Small', 35, "../birdofParadise.html");
 
 
-var orbifoliaPlant = new Plant(myArray, 'Orbifolia Plant', '../img/orbifoliaPlant.jpg', 'Medium', 65);
+var kimberlyQueenFern = new Plant(myArray, 'Kimberly Queen Fern', '../img/kimberlyQueenFern.jpg', 'Medium', 65, "../birdofParadise.html");
 
 
-var parlorPalm = new Plant(myArray, 'Parlor Palm', '../img/parlorPalm.jpg', 'Medium', 65);
+var orbifoliaPlant = new Plant(myArray, 'Orbifolia Plant', '../img/orbifoliaPlant.jpg', 'Medium', 65, "../birdofParadise.html");
 
 
-var pilea = new Plant(myArray, 'Pilea', '../img/pilea.jpg', 'Small', 35);
+var parlorPalm = new Plant(myArray, 'Parlor Palm', '../img/parlorPalm.jpg', 'Medium', 65, "../birdofParadise.html");
 
 
-var PottedBromeliad = new Plant(myArray, 'Potted Bromeliad', '../img/PottedBromeliad.jpg', 'Medium', 65);
+var pilea = new Plant(myArray, 'Pilea', '../img/pilea.jpg', 'Small', 35, "../birdofParadise.html");
 
 
-var redPrayerPlant = new Plant(myArray, 'Red Prayer Plant', '../img/redPrayerPlant.jpg', 'Small', 35);
+var PottedBromeliad = new Plant(myArray, 'Potted Bromeliad', '../img/PottedBromeliad.jpg', 'Medium', 65, "../birdofParadise.html");
+
+
+var redPrayerPlant = new Plant(myArray, 'Red Prayer Plant', '../img/redPrayerPlant.jpg', 'Small', 35, "../birdofParadise.html");
 
 
 var sansevieria = new Plant(myArray, 'Sansevieria', '../img/sansevieria.jpg', 'Large', 150);
 
-var silverBay = new Plant(myArray, 'Silver Bay', '../img/silverBay.jpg', 'Large', 150);
-
-var zzPlant = new Plant(myArray, 'ZZ Plant', '../img/zzPlant.jpg', 'Large', 150);
+var silverBay = new Plant(myArray, 'Silver Bay', '../img/silverBay.jpg', 'Large', 150, "../birdofParadise.html");
 
 
 
