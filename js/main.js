@@ -23,25 +23,30 @@ shoppingCart.className = "col-1 pt-5 pb-5";
 shoppingCart.innerHTML = "<p class='d-inline checkout'>Checkout</p><i class='d-inline fas fa-cart-arrow-down'></i>";
 navBar.appendChild(shoppingCart);
 
+//Goal: Make a sort function that can choose multiple selectors like size, petFriendly, airCleaner, price)
 
-function Plant(someArray, name, image, size, lightLevel, petFriendly, airCleaner) {
+function Plant(someArray, name, image, size, price) {
     this.name = name;
     this.image = image;
     this.size = size;
-    this.lightLevel = lightLevel;
-    this.petFriendly = petFriendly;
-    this.airCleaner = airCleaner;
+    this.price = price;
     someArray.push(this);
     this.populateHTML = function () {
-        var name = document.createElement('h6');
         var container = document.createElement('div');
-        name.innerText = this.name;
-        name.className = "text-center p-2"
-        name.style.fontFamily = "'Josefin Slab', serif";
-        name.style.fontSize = "20px";
+
+        var info = document.createElement('h6');
+        info.innerHTML = "<p> " + this.name + "</p>" +
+            "<p>" + this.size + "</p>" + "<p>" +
+            "$" + this.price + "</p>";
+        info.className = "text-center p-2"
+        info.style.fontFamily = "'Josefin Slab', serif";
+        info.style.fontSize = "20px";
+
+        var container = document.createElement('div');
         container.className = "container-fluid d-inline-block col-xs-12 col-sm-6 col-md-4 col-xl-3 animated fadeIn text-center";
         container.id = "container";
         document.body.appendChild(container);
+
         var item = document.createElement('div');
         item.style.backgroundImage = "url(" + this.image + ")";
         item.style.backgroundRepeat = "no-repeat";
@@ -49,73 +54,66 @@ function Plant(someArray, name, image, size, lightLevel, petFriendly, airCleaner
         item.style.boxShadow = "5px 5px 10px lightgrey";
         item.id = "item";
         item.className = "mx-auto";
-        var moreInfoBtn = document.createElement('div');
-        moreInfoBtn.innerHTML = '<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Find Out More</button>';
-        var modalHeader = document.getElementById('modal-header');
-        modalHeader.innerText = this.name;
+
         container.appendChild(item);
-        container.appendChild(name);
-        container.appendChild(moreInfoBtn);
-    }
-}
+        container.appendChild(info);
+    };
+};
 
 
 var myArray = [];
 
-//Plant(myArray,name,image,size,lightLevel,petFriendly,airCleaner){
+//Plant(myArray,name,image,size,price){
 
 
-var birdOfParadise = new Plant(myArray, 'Bird Of Paradise', '../img/birdOfParadise.jpg', 'X-Large', 'bright indirect to bright light', 'can cause mouth irritation and digestive reaction', true);
+var birdOfParadise = new Plant(myArray, 'Bird Of Paradise', '../img/birdOfParadise.jpg', 'X-Large', 195);
 
-var birdsNestFern = new Plant(myArray, 'Birds Nest Fern', '../img/birdsNestFern.jpg', '', '', '');
+var birdsNestFern = new Plant(myArray, 'Birds Nest Fern', '../img/birdsNestFern.jpg', 'Small', 35);
 
-var crotonPetra = new Plant(myArray, 'Croton Petra', '../img/CrotonPetra.jpg', '', '', '');
+var crotonPetra = new Plant(myArray, 'Croton Petra', '../img/CrotonPetra.jpg', 'Medium', 65);
 
-var cutlassAglaonema = new Plant(myArray, 'Cutlass Aglaonema', '../img/cutlassAglaonema.jpg', '', '', '');
+var cutlassAglaonema = new Plant(myArray, 'Cutlass Aglaonema', '../img/cutlassAglaonema.jpg', 'Medium', 65);
 
-var dracaenaJanetCraig = new Plant(myArray, 'Dracaena Janet Craig', '../img/dracaenaJanetCraig.jpg', '', '', '');
+var dracaenaJanetCraig = new Plant(myArray, 'Dracaena Janet Craig', '../img/dracaenaJanetCraig.jpg', 'X-Large', 195);
 
-var dracaenaLemonLime = new Plant(myArray, 'Dracaena Lemon Lime', '../img/dracaenaLemonLime.jpg', '', '', '');
+var dracaenaLemonLime = new Plant(myArray, 'Dracaena Lemon Lime', '../img/dracaenaLemonLime.jpg', 'Medium', 65);
 
-var dracaenaMarginataBush = new Plant(myArray, 'Dracaena Marginata Bush', '../img/dracaenaMarginataBush.jpg', '', '', '');
+var dracaenaMarginataBush = new Plant(myArray, 'Dracaena Marginata Bush', '../img/dracaenaMarginataBush.jpg', 'Large', 150);
 
-var ficusDanielle = new Plant(myArray, 'Ficus Danielle', '../img/ficusDanielle.jpg', '', '', '');
+var ficusDanielle = new Plant(myArray, 'Ficus Danielle', '../img/ficusDanielle.jpg', 'X-Large', 195);
 
-var fiddleLeafFig = new Plant(myArray, 'Fiddle Leaf Fig', '../img/fiddleLeafFig.jpg', '', '', '');
+var fiddleLeafFig = new Plant(myArray, 'Fiddle Leaf Fig', '../img/fiddleLeafFig.jpg', 'X-Large', 195);
 
-var floorPalm = new Plant(myArray, 'Floor Palm', '../img/floorPalm.jpg', '', '', '');
+var majestyPalm = new Plant(myArray, 'Majesty Palm', '../img/floorPalm.jpg', 'X-Large', 195);
 
-var freddiePlant = new Plant(myArray, 'Freddie Plant', '../img/freddiePlant.jpg', '', '', '');
+var freddiePlant = new Plant(myArray, 'Freddie Plant', '../img/freddiePlant.jpg', 'Small', 35);
 
-var hedgehogAloe = new Plant(myArray, 'Hedgehog Aloe', '../img/hedgehogAloe.jpg', '', '', '');
-
-
-var kimberlyQueenFern = new Plant(myArray, 'Kimberly Queen Fern', '../img/kimberlyQueenFern.jpg', '', '', '');
+var hedgehogAloe = new Plant(myArray, 'Hedgehog Aloe', '../img/hedgehogAloe.jpg', 'Small', 35);
 
 
-var majestyPalm = new Plant(myArray, 'Majesty Palm', '../img/majestyPalm.jpg', '', '', '');
+var kimberlyQueenFern = new Plant(myArray, 'Kimberly Queen Fern', '../img/kimberlyQueenFern.jpg', 'Medium', 65);
 
 
-var orbifoliaPlant = new Plant(myArray, 'Orbifolia Plant', '../img/orbifoliaPlant.jpg', '', '', '');
+var orbifoliaPlant = new Plant(myArray, 'Orbifolia Plant', '../img/orbifoliaPlant.jpg', 'Medium', 65);
 
 
-var parlorPalm = new Plant(myArray, 'Parlor Palm', '../img/parlorPalm.jpg', '', '', '');
+var parlorPalm = new Plant(myArray, 'Parlor Palm', '../img/parlorPalm.jpg', 'Medium', 65);
 
 
-var pilea = new Plant(myArray, 'Pilea', '../img/pilea.jpg', '', '', '');
+var pilea = new Plant(myArray, 'Pilea', '../img/pilea.jpg', 'Small', 35);
 
 
-var PottedBromeliad = new Plant(myArray, 'Potted Bromeliad', '../img/PottedBromeliad.jpg', '', '', '');
+var PottedBromeliad = new Plant(myArray, 'Potted Bromeliad', '../img/PottedBromeliad.jpg', 'Medium', 65);
 
 
-var redPrayerPlant = new Plant(myArray, 'Red Prayer Plant', '../img/redPrayerPlant.jpg', '', '', '');
+var redPrayerPlant = new Plant(myArray, 'Red Prayer Plant', '../img/redPrayerPlant.jpg', 'Small', 35);
 
 
-var sansevieria = new Plant(myArray, 'Sansevieria', '../img/sansevieria.jpg', '', '', '');
+var sansevieria = new Plant(myArray, 'Sansevieria', '../img/sansevieria.jpg', 'Large', 150);
 
-var silverBay = new Plant(myArray, 'Silver Bay', '../img/silverBay.jpg', '', '', '');
+var silverBay = new Plant(myArray, 'Silver Bay', '../img/silverBay.jpg', 'Large', 150);
 
-var zzPlant = new Plant(myArray, 'ZZ Plant', '../img/zzPlant.jpg', '', '', '');
+var zzPlant = new Plant(myArray, 'ZZ Plant', '../img/zzPlant.jpg', 'Large', 150);
 
 
 
