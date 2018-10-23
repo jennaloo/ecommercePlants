@@ -47,6 +47,10 @@ function Plant(someArray, name, image, size, price) {
         container.id = "container";
         document.body.appendChild(container);
 
+        var anchorTags = document.createElement('a');
+        anchorTags.setAttribute("href", "#");
+        container.appendChild(anchorTags);
+
         var item = document.createElement('div');
         item.style.backgroundImage = "url(" + this.image + ")";
         item.style.backgroundRepeat = "no-repeat";
@@ -55,7 +59,7 @@ function Plant(someArray, name, image, size, price) {
         item.id = "item";
         item.className = "mx-auto";
 
-        container.appendChild(item);
+        anchorTags.appendChild(item);
         container.appendChild(info);
     };
 };
