@@ -7,10 +7,14 @@ var logoSpace = document.createElement('div');
 logoSpace.className = "col-4 pb-5"
 navBar.appendChild(logoSpace);
 
+var anchorLogo = document.createElement('a');
+anchorLogo.setAttribute("href", "index.html");
+logoSpace.appendChild(anchorLogo);
+
 var logo = document.createElement('div');
 logo.innerHTML = "<img src='../img/logo.png' width='100px' height='auto'>";
 logo.className = "logo px-3";
-logoSpace.appendChild(logo);
+anchorLogo.appendChild(logo);
 
 var title = document.createElement('div');
 title.className = "col-6 pt-3"
