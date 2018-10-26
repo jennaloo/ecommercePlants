@@ -32,38 +32,39 @@ function Plant(someArray, name, image, size, price, site) {
     this.price = price;
     this.site = site;
     someArray.push(this);
-    this.populateHTML = function () {
-        var container = document.createElement('div');
+};
 
-        var info = document.createElement('h6');
-        info.innerHTML = "<p> " + this.name + "</p>" +
-            "<p>" + this.size + "</p>" + "<p>" +
-            "$" + this.price + "</p>";
-        info.className = "text-center p-2"
-        info.style.fontFamily = "'Josefin Slab', serif";
-        info.style.fontSize = "20px";
+Plant.prototype.populateHTML = function () {
+    var container = document.createElement('div');
 
-        var container = document.createElement('div');
-        container.className = "container-fluid d-inline-block col-xs-12 col-sm-6 col-md-4 col-xl-3 animated fadeIn text-center";
-        container.id = "container";
-        document.body.appendChild(container);
+    var info = document.createElement('h6');
+    info.innerHTML = "<p> " + this.name + "</p>" +
+        "<p>" + this.size + "</p>" + "<p>" +
+        "$" + this.price + "</p>";
+    info.className = "text-center p-2"
+    info.style.fontFamily = "'Josefin Slab', serif";
+    info.style.fontSize = "20px";
 
-        var anchorTags = document.createElement('a');
-        anchorTags.setAttribute("href", "" + this.site + "");
-        anchorTags.setAttribute("target", "_blank");
-        container.appendChild(anchorTags);
+    var container = document.createElement('div');
+    container.className = "container-fluid d-inline-block col-xs-12 col-sm-6 col-md-4 col-xl-3 animated fadeIn text-center";
+    container.id = "container";
+    document.body.appendChild(container);
+
+    var anchorTags = document.createElement('a');
+    anchorTags.setAttribute("href", "" + this.site + "");
+    anchorTags.setAttribute("target", "_blank");
+    container.appendChild(anchorTags);
 
 
-        var item = document.createElement('div');
-        item.setAttribute("style", "background-image: url('" + this.image + "')");
-        item.style.backgroundRepeat = "no-repeat";
-        item.style.backgroundSize = "cover";
-        item.style.boxShadow = "5px 5px 10px lightgrey";
-        item.id = "item";
-        item.className = "mx-auto";
-        anchorTags.appendChild(item);
-        container.appendChild(info);
-    };
+    var item = document.createElement('div');
+    item.setAttribute("style", "background-image: url('" + this.image + "')");
+    item.style.backgroundRepeat = "no-repeat";
+    item.style.backgroundSize = "cover";
+    item.style.boxShadow = "5px 5px 10px lightgrey";
+    item.id = "item";
+    item.className = "mx-auto";
+    anchorTags.appendChild(item);
+    container.appendChild(info);
 };
 
 
@@ -122,6 +123,5 @@ var silverBay = new Plant(myArray, 'Silver Bay', '../img/silverBay.jpg', 'Large'
 
 
 for (i = 0; i < myArray.length; i++) {
-    console.log(myArray[i].image);
     myArray[i].populateHTML();
 };
