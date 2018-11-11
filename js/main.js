@@ -38,6 +38,7 @@ function Plant(someArray, name, image, size, price, site) {
     someArray.push(this);
 };
 
+
 Plant.prototype.populateHTML = function () {
     var container = document.createElement('div');
 
